@@ -5,7 +5,14 @@ console.log(`Browser?${isBrowser}`, platform)
 
 (async ()=>{
   console.log(`Attempting a simple test`)
-  const page = await require('./testpage.js')('https://google.com')
+
+  if(isBrowser){
+    document.write('<script src=http://rawgit.com/digplan/testpage/master/testpage.js >')
+  } else {
+    const testpage = require('testpage')
+  }
+
+  const page = await testpage('https://google.com')
   const html = await page.html()
   const e = await page.eval('1+1')
 

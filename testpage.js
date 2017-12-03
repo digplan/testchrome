@@ -21,4 +21,7 @@ const testpage = url => {return new Promise((r,j)=>{
   require('chrome-remote-interface')(br)
 })}
 
-if(typeof window==='undefined') module.exports = testpage
+if(typeof window==='undefined') 
+  module.exports = testpage;
+else
+  window.testpage = testpage;

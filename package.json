@@ -1,0 +1,7 @@
+{
+  "name": "testpage",
+  "version": "0.0.1",
+  "devDependencies": {
+    "chrome-remote-interface": "*"
+  }
+}

@@ -4,7 +4,8 @@ const testpage = url => {return new Promise((r,j)=>{
       cli.Page.navigate({url: url})
       var o={
         html: async x=>{
-          return (await cli.Runtime.evaluate({expression:'window.document.body.outerHTML'})).result.value
+          var el = 'window.document.documentElement.innerHTML'
+          return (await cli.Runtime.evaluate({expression: el})).result.value
         },
         eval: async x=>{
          var r = await cli.Runtime.evaluate({expression:x})
@@ -20,11 +21,4 @@ const testpage = url => {return new Promise((r,j)=>{
   require('chrome-remote-interface')(br)
 })}
 
-(async ()=>{
-
-  const page = await testpage('https://google.com')
-  const html = await page.html()
-  const e = await page.eval('1+1')
-  console.log(html,e)
-
-})().catch(console.error)
+if(typeof window==='undefined') module.exports = testpage

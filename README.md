@@ -1,6 +1,8 @@
 #testpage
-##Simple web testing for node and browser
 
+Simple web testing for node and browser
+
+##Install & Self-test
 ````
 npm install testpage
 
@@ -16,3 +18,6 @@ Self test
 2. Paste into your Snippets window and run
 ````
 
+##Usage
+
+Testpage is based on a very simple workflow, with minimal stuff to learn.  Tests can be run as Node programs or in a browser.

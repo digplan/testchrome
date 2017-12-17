@@ -1,8 +1,8 @@
 (async ()=>{
   console.log(`Attempting a simple test`)
   
-  var page = require('./testchrome.js')('https://google.com')
-  const e = await page.eval('1+1')
+  var page = await require('./main.js')('https://google.com')
+  const e = await page.evaluate('1+1')
   console.log(e==2 ? `1 + 1 = ${e} - ok`:`Error cannot eval JS`)
  
   const getdata = await page.get('https://restbin-iwgv042975uv.runkit.sh/api')

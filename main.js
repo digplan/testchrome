@@ -22,6 +22,6 @@ const testchrome = url =>new Promise(r=>{
 
 require('chrome-remote-interface')().catch(e=>{
   console.log('Chrome not started. # chrome --remote-debugging-port=9222 --headless')
-  process.exit()
+  process.exit(1)
 })
 module.exports = testchrome

@@ -1,0 +1,13 @@
+echo "Checking for the existence of chrome or chromium, just needs one of them"
+if ! [ -x "$(command -v chrome)" ]; then
+  echo 'Chrome is not installed.' >&2
+else
+  echo "$(chrome --version)"
+fi
+
+if ! [ -x "$(command -v chromium)" ]; then
+  echo 'chromium is not installed.' >&2
+else
+  echo "$(chromium --version)"
+fi
+echo "Make sure to run [chrome|chromium] --headless --disable-gpu --remote-debugging-port=9222 &"

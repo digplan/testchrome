@@ -1,9 +1,8 @@
 {
   "name": "testchrome",
-  "version": "0.1.1",
+  "version": "0.1.22,
   "main": "main.js",
   "dependencies": {
-    "chrome-remote-interface": "*",
-    "node-fetch": "^1.7.3"
+    "chrome-remote-interface": "*"
   }
 }

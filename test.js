@@ -1,12 +1,13 @@
-(async ()=>{
+const test = async () => {
+
   console.log(`Attempting a simple test`)
   
   var page = await require('./main.js')('https://google.com')
   const e = await page.evaluate('1+1')
   console.log(e==2 ? `1 + 1 = ${e} - ok`:`Error cannot eval JS`)
- 
-  const getdata = await page.get('https://restbin-iwgv042975uv.runkit.sh/api')
-  console.log(`get(url) - ${getdata.date} ${getdata.time} - ok`)
+  console.log(await page.evaluate('location.href')) 
+  process.exit(0)
 
-  process.exit(0) 
-})()
+}
+
+test().catch(console.error)

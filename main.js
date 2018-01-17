@@ -15,6 +15,13 @@ return new Promise(async (r,j)=>{
        throw Error(r.result.description);
       return r.result.value
   }
+  global.wait = ms=>new Promise(r=>setTimeout(r,ms))
+  ret.loadEventFired = async x => {
+    return new Promise(async r=>{
+      await Page.loadEventFired()
+      r()
+    })
+  }
   r(ret)
  } catch(e) {
     j(e)

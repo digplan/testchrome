@@ -1,6 +1,6 @@
 {
   "name": "testchrome",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "main.js",
   "dependencies": {
     "chrome-remote-interface": "*"
